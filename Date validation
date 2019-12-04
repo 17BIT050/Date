@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+   int mm,dd,yy,n;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d/%d/%d\n",&dd,&mm,&yy);
+        
+        if((dd>=1 && dd<=31) && (mm>=1 && mm<=12) && (yy>=1900 && yy<=2200))
+        {  
+            if(mm==1 || mm==3 || mm==5 || mm==7 || mm==8 || mm==10 || mm==12)
+            { 
+                if(dd>=1 && dd<=31){
+                printf("VALID\n");
+            }
+             else{
+                 printf("NOT VALID\n");
+             } 
+        }
+            
+         else if(mm==4 || mm==6 || mm==9 || mm==11){
+             
+            if(dd>=1 && dd<=30){
+            printf("VALID\n");
+            }
+             else{
+                  printf("NOT VALID\n");
+             }
+             
+           }
+            
+         else if(mm==2)
+         {
+             
+            if(((yy % 4==0 && yy % 100!=0)|| (yy % 400==0)) && dd==29)
+            {
+                printf("VALID\n");
+            }
+            else if (dd>=1 && dd<=28)
+            {
+                printf("VALID\n");
+            } 
+            else{
+                printf("NOT VALID\n");
+            }    
+        }
+            
+        else{
+            printf("NOT VALID\n");
+        }
+            
+      } 
+        
+    else{
+        printf("NOT VALID\n");
+    }
+        
+  }
+  return 0; 
+}
